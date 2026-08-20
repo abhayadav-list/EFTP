@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sprint 1: ETL Ingestion Simulator</title>
+    <style>
+        :root {
+            --bg-color: #090a0f;
+            --panel-bg: #151821;
+            --text-main: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-amber: #ff9800;
+            --accent-cyan: #00e5ff;
+            --accent-green: #39ff14;
+            --border-color: #2a2f42;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            box-sizing: border-box;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.5rem;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: normal;
+        }
+
+        .architecture-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-grow: 1;
+            padding: 0 50px;
+            position: relative;
+        }
+
+        .node-column {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 10;
+        }
+
+        .source-btn, .engine-node, .target-node {
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            padding: 15px 25px;
+            border-radius: 4px;
+            color: var(--text-main);
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 0.9rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .source-btn {
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .source-btn:hover {
+            border-color: var(--accent-amber);
+            box-shadow: 0 0 15px rgba(255, 152, 0, 0.2);
+            transform: translateX(5px);
+        }
+
+        .engine-node {
+            padding: 30px 40px;
+            border-color: var(--text-muted);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        .target-node {
+            padding: 30px 40px;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 20px rgba(0, 229, 255, 0.1);
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+
+        /* Particle styling for the data packet */
+        .data-packet {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: var(--accent-amber);
+            border-radius: 50%;
+            box-shadow: 0 0 10px var(--accent-amber), 0 0 20px var(--accent-amber);
+            z-index: 5;
+            transition: top 0.8s ease-in-out, left 0.8s ease-in-out;
+            pointer-events: none;
+        }
+
+        .packet-success {
+            background-color: var(--accent-cyan);
+            box-shadow: 0 0 10px var(--accent-cyan), 0 0 20px var(--accent-cyan);
+        }
+
+        .log-container {
+            height: 200px;
+            background-color: #0b0d14;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            padding: 15px;
+            overflow-y: auto;
+            margin-top: 30px;
+        }
+
+        .log-entry {
+            margin-bottom: 8px;
+            font-size: 0.85rem;
+            line-height: 1.4;
+        }
+
+        .log-timestamp {
+            color: var(--text-muted);
+            margin-right: 10px;
+        }
+
+        .log-message {
+            color: var(--accent-green);
+        }
+        
+        .pulse {
+            animation: enginePulse 0.5s ease-out;
+        }
+
+        @keyframes enginePulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 rgba(255, 152, 0, 0); }
+            50% { transform: scale(1.05); box-shadow: 0 0 20px rgba(255, 152, 0, 0.4); border-color: var(--accent-amber); }
+            100% { transform: scale(1); box-shadow: 0 0 0 rgba(255, 152, 0, 0); }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Enterprise FinTech Data Platform: Sprint 1 Ingestion</h1>
+
+    <div class="architecture-container" id="canvas">
+        
+        <div class="node-column">
+            <div class="source-btn" onclick="triggerIngestion(this, 'UPI Transaction System', 'JSON', 54000)">[+] UPI Transaction System</div>
+            <div class="source-btn" onclick="triggerIngestion(this, 'Digital Wallet Platform', 'JSON', 12500)">[+] Digital Wallet Platform</div>
+            <div class="source-btn" onclick="triggerIngestion(this, 'Payment Gateway', 'CSV', 8900)">[+] Payment Gateway</div>
+            <div class="source-btn" onclick="triggerIngestion(this, 'Merchant Portal', 'XML', 3200)">[+] Merchant Portal</div>
+            <div class="source-btn" onclick="triggerIngestion(this, 'API Gateway Logs', 'TXT', 105000)">[+] API Gateway Logs</div>
+        </div>
+
+        <div class="node-column">
+            <div class="engine-node" id="pentaho-engine">Pentaho (Spoon) ETL</div>
+        </div>
+
+        <div class="node-column">
+            <div class="target-node" id="postgres-target">PostgreSQL Staging<br><span style="font-size:0.7rem; font-weight:normal; color:#94a3b8;">datasets/bronze/ingestion/</span></div>
+        </div>
+
+    </div>
+
+    <div class="log-container" id="terminal-log">
+        <div class="log-entry">
+            <span class="log-timestamp">[SYSTEM READY]</span>
+            <span style="color: var(--text-muted)">Waiting for ingestion triggers...</span>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const engine = document.getElementById('pentaho-engine');
+        const target = document.getElementById('postgres-target');
+        const terminalLog = document.getElementById('terminal-log');
+
+        function appendLog(message, isSuccess = false) {
+            const entry = document.createElement('div');
+            entry.className = 'log-entry';
+            
+            const now = new Date();
+            const timeString = now.toISOString().split('T')[1].slice(0, -1);
+            
+            const colorClass = isSuccess ? 'log-message' : '';
+            const colorStyle = isSuccess ? '' : 'color: var(--text-main);';
+
+            entry.innerHTML = `
+                <span class="log-timestamp">[${timeString}]</span>
+                <span class="${colorClass}" style="${colorStyle}">${message}</span>
+            `;
+            
+            terminalLog.appendChild(entry);
+            terminalLog.scrollTop = terminalLog.scrollHeight;
+        }
+
+        function triggerIngestion(sourceElement, sourceName, format, recordCount) {
+            // Log initiation
+            appendLog(`Initiating connection to ${sourceName}... Extracting ${format} payload.`);
+            
+            // Get Coordinates
+            const sourceRect = sourceElement.getBoundingClientRect();
+            const engineRect = engine.getBoundingClientRect();
+            const targetRect = target.getBoundingClientRect();
+            const canvasRect = canvas.getBoundingClientRect();
+
+            // Create Data Packet
+            const packet = document.createElement('div');
+            packet.className = 'data-packet';
+            
+            // Set initial position (Center of the source button)
+            const startX = sourceRect.right - canvasRect.left;
+            const startY = sourceRect.top + (sourceRect.height / 2) - canvasRect.top - 5;
+            
+            packet.style.left = startX + 'px';
+            packet.style.top = startY + 'px';
+            
+            canvas.appendChild(packet);
+
+            // Animate to ETL Engine
+            setTimeout(() => {
+                const engineX = engineRect.left + (engineRect.width / 2) - canvasRect.left - 5;
+                const engineY = engineRect.top + (engineRect.height / 2) - canvasRect.top - 5;
+                
+                packet.style.left = engineX + 'px';
+                packet.style.top = engineY + 'px';
+
+                // Engine processing effect
+                setTimeout(() => {
+                    engine.classList.remove('pulse');
+                    void engine.offsetWidth; // Trigger reflow
+                    engine.classList.add('pulse');
+                    packet.classList.add('packet-success');
+                    appendLog(`Pentaho transforming raw data from ${sourceName}...`);
+
+                    // Animate to Target
+                    setTimeout(() => {
+                        const targetX = targetRect.left - canvasRect.left;
+                        const targetY = targetRect.top + (targetRect.height / 2) - canvasRect.top - 5;
+                        
+                        packet.style.left = targetX + 'px';
+                        packet.style.top = targetY + 'px';
+
+                        // Complete Ingestion
+                        setTimeout(() => {
+                            packet.remove();
+                            appendLog(`SUCCESS: Landed ${recordCount.toLocaleString()} ${format} records into PostgreSQL Bronze Staging.`, true);
+                        }, 800); // Wait for Target animation to finish
+                    }, 500); // Wait inside Engine
+                }, 800); // Wait for Source -> Engine animation
+            }, 50); // Initial delay to allow DOM to register element
+        }
+    </script>
+</body>
+</html>
