@@ -430,7 +430,7 @@
     <created_date>2026/08/20 19:01:10.374</created_date>
     <modified_user>-</modified_user>
     <modified_date>2026/08/20 19:01:10.374</modified_date>
-    <key_for_session_key/>
+    <key_for_session_key>H4sIAAAAAAAA/wMAAAAAAAAAAAA=</key_for_session_key>
     <is_key_private>N</is_key_private>
   </info>
   <notepads>
@@ -497,7 +497,189 @@
       <to>Table output</to>
       <enabled>Y</enabled>
     </hop>
+    <hop>
+      <from>payment_gateway</from>
+      <to>error</to>
+      <enabled>Y</enabled>
+    </hop>
+    <hop>
+      <from>Add constants</from>
+      <to>Write to log</to>
+      <enabled>Y</enabled>
+    </hop>
   </order>
+  <step>
+    <name>Add constants</name>
+    <type>Constant</type>
+    <description/>
+    <distribute>N</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <fields>
+      <field>
+        <name>batch_id</name>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <nullif>BATCH_${Internal.Job.Name}_001</nullif>
+        <length>-1</length>
+        <precision>-1</precision>
+        <set_empty_string>N</set_empty_string>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>224</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>Table output</name>
+    <type>TableOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <connection>gateway</connection>
+    <schema>staging</schema>
+    <table>payment_gateway_transactions</table>
+    <commit>1000</commit>
+    <truncate>Y</truncate>
+    <ignore_errors>N</ignore_errors>
+    <use_batch>Y</use_batch>
+    <specify_fields>Y</specify_fields>
+    <partitioning_enabled>N</partitioning_enabled>
+    <partitioning_field/>
+    <partitioning_daily>N</partitioning_daily>
+    <partitioning_monthly>Y</partitioning_monthly>
+    <tablename_in_field>N</tablename_in_field>
+    <tablename_field/>
+    <tablename_in_table>Y</tablename_in_table>
+    <return_keys>N</return_keys>
+    <return_field/>
+    <fields>
+      <field>
+        <column_name>gateway_txn_id</column_name>
+        <stream_name>gateway_txn_id</stream_name>
+      </field>
+      <field>
+        <column_name>transaction_id</column_name>
+        <stream_name>transaction_id</stream_name>
+      </field>
+      <field>
+        <column_name>merchant_id</column_name>
+        <stream_name>merchant_id</stream_name>
+      </field>
+      <field>
+        <column_name>amount</column_name>
+        <stream_name>amount</stream_name>
+      </field>
+      <field>
+        <column_name>payment_mode</column_name>
+        <stream_name>payment_mode</stream_name>
+      </field>
+      <field>
+        <column_name>gateway_status</column_name>
+        <stream_name>gateway_status</stream_name>
+      </field>
+      <field>
+        <column_name>response_code</column_name>
+        <stream_name>response_code</stream_name>
+      </field>
+      <field>
+        <column_name>batch_id</column_name>
+        <stream_name>batch_id</stream_name>
+      </field>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>368</xloc>
+      <yloc>112</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
+  <step>
+    <name>error</name>
+    <type>TextFileOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <custom_distribution/>
+    <copies>1</copies>
+    <partitioning>
+      <method>none</method>
+      <schema_name/>
+    </partitioning>
+    <separator>;</separator>
+    <enclosure>"</enclosure>
+    <enclosure_forced>N</enclosure_forced>
+    <enclosure_fix_disabled>N</enclosure_fix_disabled>
+    <header>Y</header>
+    <footer>N</footer>
+    <format>DOS</format>
+    <compression>None</compression>
+    <encoding/>
+    <endedLine/>
+    <fileNameInField>N</fileNameInField>
+    <fileNameField/>
+    <create_parent_folder>Y</create_parent_folder>
+    <file>
+      <name>D:\EFTP\bronze\staging\errors\payment_gateway_error</name>
+      <servlet_output>N</servlet_output>
+      <do_not_open_new_file_init>N</do_not_open_new_file_init>
+      <extention>txt</extention>
+      <append>N</append>
+      <split>N</split>
+      <haspartno>N</haspartno>
+      <add_date>N</add_date>
+      <add_time>N</add_time>
+      <SpecifyFormat>N</SpecifyFormat>
+      <date_time_format/>
+      <add_to_result_filenames>Y</add_to_result_filenames>
+      <pad>N</pad>
+      <fast_dump>N</fast_dump>
+      <splitevery/>
+    </file>
+    <fields>
+    </fields>
+    <attributes/>
+    <cluster_schema/>
+    <remotesteps>
+      <input>
+      </input>
+      <output>
+      </output>
+    </remotesteps>
+    <GUI>
+      <xloc>208</xloc>
+      <yloc>272</yloc>
+      <draw>Y</draw>
+    </GUI>
+  </step>
   <step>
     <name>payment_gateway</name>
     <type>JsonInput</type>
@@ -661,8 +843,8 @@
     </GUI>
   </step>
   <step>
-    <name>Table output</name>
-    <type>TableOutput</type>
+    <name>Write to log</name>
+    <type>WriteToLog</type>
     <description/>
     <distribute>Y</distribute>
     <custom_distribution/>
@@ -671,57 +853,13 @@
       <method>none</method>
       <schema_name/>
     </partitioning>
-    <connection>gateway</connection>
-    <schema>staging</schema>
-    <table>payment_gateway_transactions</table>
-    <commit>1000</commit>
-    <truncate>Y</truncate>
-    <ignore_errors>N</ignore_errors>
-    <use_batch>Y</use_batch>
-    <specify_fields>Y</specify_fields>
-    <partitioning_enabled>N</partitioning_enabled>
-    <partitioning_field/>
-    <partitioning_daily>N</partitioning_daily>
-    <partitioning_monthly>Y</partitioning_monthly>
-    <tablename_in_field>N</tablename_in_field>
-    <tablename_field/>
-    <tablename_in_table>Y</tablename_in_table>
-    <return_keys>N</return_keys>
-    <return_field/>
+    <loglevel>log_level_basic</loglevel>
+    <displayHeader>Y</displayHeader>
+    <limitRows>N</limitRows>
+    <limitRowsNumber>0</limitRowsNumber>
+    <logmessage/>
     <fields>
-      <field>
-        <column_name>gateway_txn_id</column_name>
-        <stream_name>gateway_txn_id</stream_name>
-      </field>
-      <field>
-        <column_name>transaction_id</column_name>
-        <stream_name>transaction_id</stream_name>
-      </field>
-      <field>
-        <column_name>merchant_id</column_name>
-        <stream_name>merchant_id</stream_name>
-      </field>
-      <field>
-        <column_name>amount</column_name>
-        <stream_name>amount</stream_name>
-      </field>
-      <field>
-        <column_name>payment_mode</column_name>
-        <stream_name>payment_mode</stream_name>
-      </field>
-      <field>
-        <column_name>gateway_status</column_name>
-        <stream_name>gateway_status</stream_name>
-      </field>
-      <field>
-        <column_name>response_code</column_name>
-        <stream_name>response_code</stream_name>
-      </field>
-      <field>
-        <column_name>batch_id</column_name>
-        <stream_name>batch_id</stream_name>
-      </field>
-    </fields>
+      </fields>
     <attributes/>
     <cluster_schema/>
     <remotesteps>
@@ -731,51 +869,24 @@
       </output>
     </remotesteps>
     <GUI>
-      <xloc>368</xloc>
-      <yloc>112</yloc>
-      <draw>Y</draw>
-    </GUI>
-  </step>
-  <step>
-    <name>Add constants</name>
-    <type>Constant</type>
-    <description/>
-    <distribute>Y</distribute>
-    <custom_distribution/>
-    <copies>1</copies>
-    <partitioning>
-      <method>none</method>
-      <schema_name/>
-    </partitioning>
-    <fields>
-      <field>
-        <name>batch_id</name>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <nullif>BATCH_${Internal.Job.Name}_001</nullif>
-        <length>-1</length>
-        <precision>-1</precision>
-        <set_empty_string>N</set_empty_string>
-      </field>
-    </fields>
-    <attributes/>
-    <cluster_schema/>
-    <remotesteps>
-      <input>
-      </input>
-      <output>
-      </output>
-    </remotesteps>
-    <GUI>
-      <xloc>224</xloc>
-      <yloc>112</yloc>
+      <xloc>304</xloc>
+      <yloc>208</yloc>
       <draw>Y</draw>
     </GUI>
   </step>
   <step_error_handling>
+    <error>
+      <source_step>payment_gateway</source_step>
+      <target_step>error</target_step>
+      <is_enabled>Y</is_enabled>
+      <nr_valuename/>
+      <descriptions_valuename/>
+      <fields_valuename/>
+      <codes_valuename/>
+      <max_errors/>
+      <max_pct_errors/>
+      <min_pct_rows/>
+    </error>
   </step_error_handling>
   <slave-step-copy-partition-distribution>
   </slave-step-copy-partition-distribution>
