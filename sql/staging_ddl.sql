@@ -1,18 +1,22 @@
+
+
+
+
 CREATE TABLE staging.upi_transactions (
     transaction_id TEXT, customer_id TEXT, merchant_id TEXT, upi_vpa TEXT,
-    amount TEXT, txn_timestamp TEXT, status TEXT, bank_rrn TEXT, upi_app TEXT,
+    amount NUMERIC, txn_timestamp TEXT, status TEXT, bank_rrn TEXT, upi_app TEXT,
     source_system TEXT, load_timestamp TIMESTAMP, batch_id TEXT
 );
 
 CREATE TABLE staging.digital_wallet_transactions (
     wallet_txn_id TEXT, transaction_id TEXT, customer_id TEXT, merchant_id TEXT,
-    wallet_provider TEXT, txn_type TEXT, amount TEXT, wallet_balance_after TEXT,
+    wallet_provider TEXT, txn_type TEXT, amount NUMERIC, wallet_balance_after NUMERIC,
     txn_timestamp TEXT, status TEXT,
     source_system TEXT, load_timestamp TIMESTAMP, batch_id TEXT
 );
 
 CREATE TABLE staging.payment_gateway_transactions (
-    gateway_txn_id TEXT, transaction_id TEXT, merchant_id TEXT, amount TEXT,
+    gateway_txn_id TEXT, transaction_id TEXT, merchant_id TEXT, amount NUMERIC,
     payment_mode TEXT, gateway_status TEXT, response_code TEXT, txn_timestamp TEXT,
     source_system TEXT, load_timestamp TIMESTAMP, batch_id TEXT
 );
@@ -36,7 +40,7 @@ CREATE TABLE staging.kyc_verification (
 
 CREATE TABLE staging.settlement_batches (
     settlement_id TEXT, merchant_id TEXT, batch_date TEXT, total_transactions TEXT,
-    total_amount TEXT, settled_amount TEXT, settlement_status TEXT,
+    total_amount NUMERIC, settled_amount NUMERIC, settlement_status TEXT,
     source_system TEXT, load_timestamp TIMESTAMP, batch_id TEXT
 );
 
