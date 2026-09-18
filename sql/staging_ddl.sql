@@ -1,7 +1,4 @@
 
-
-
-
 CREATE TABLE staging.upi_transactions (
     transaction_id TEXT, customer_id TEXT, merchant_id TEXT, upi_vpa TEXT,
     amount NUMERIC, txn_timestamp TEXT, status TEXT, bank_rrn TEXT, upi_app TEXT,
@@ -22,7 +19,7 @@ CREATE TABLE staging.payment_gateway_transactions (
 );
 
 CREATE TABLE staging.merchant_portal (
-    merchant_id TEXT, merchant_name TEXT, category TEXT, city TEXT, state TEXT,
+    merchant_id TEXT, merchant_name TEXT, category TEXT, city TEXT, "State" TEXT,
     onboarding_date TEXT, gst_number TEXT, bank_account TEXT, settlement_cycle TEXT,
     source_system TEXT, load_timestamp TIMESTAMP, batch_id TEXT
 );
@@ -34,7 +31,7 @@ CREATE TABLE staging.crm_customers (
 );
 
 CREATE TABLE staging.kyc_verification (
-    customer_id TEXT, kyc_status TEXT, id_type TEXT, verification_date TEXT, risk_score TEXT,
+    customer_id TEXT, kyc_status TEXT, id_type TEXT, verification_date DATE, risk_score TEXT,
     source_system TEXT, load_timestamp TIMESTAMP, batch_id TEXT
 );
 
@@ -46,7 +43,7 @@ CREATE TABLE staging.settlement_batches (
 
 CREATE TABLE staging.mobile_banking_sessions (
     session_id TEXT, customer_id TEXT, transaction_id TEXT, device_type TEXT,
-    os_version TEXT, app_version TEXT, login_timestamp TEXT, action TEXT,
+    os_version TEXT, app_version TEXT, login_timestamp TEXT, "action" TEXT,
     source_system TEXT, load_timestamp TIMESTAMP, batch_id TEXT
 );
 
