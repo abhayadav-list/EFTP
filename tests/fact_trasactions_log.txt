@@ -1,0 +1,48 @@
+2026/10/15 19:46:09 - load_Fact_Transaction - Using run configuration [Pentaho local]
+2026/10/15 19:46:09 - load_Fact_Transaction - Dispatching started for transformation [load_Fact_Transaction]
+2026/10/15 19:46:09 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/15 19:46:09 - Table input.0 - Finished reading query, closing connection
+2026/10/15 19:46:09 - Table input.0 - Finished processing (I=11905, O=0, R=0, W=11905, U=0, E=0)
+2026/10/15 19:46:10 - Table output.0 - Finished processing (I=0, O=11905, R=11905, W=11905, U=0, E=0)
+2026/10/15 19:56:56 - load_Fact_Transaction - Using run configuration [Pentaho local]
+2026/10/15 19:56:56 - load_Fact_Transaction - Dispatching started for transformation [load_Fact_Transaction]
+2026/10/15 19:56:56 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/15 19:56:57 - Table input.0 - Finished reading query, closing connection
+2026/10/15 19:56:57 - Table input.0 - Finished processing (I=11905, O=0, R=0, W=11905, U=0, E=0)
+2026/10/15 19:56:57 - Table output.0 - Finished processing (I=0, O=11905, R=11905, W=11905, U=0, E=0)
+2026/10/15 20:02:49 - load_Fact_Transaction - Using run configuration [Pentaho local]
+2026/10/15 20:02:49 - load_Fact_Transaction - Dispatching started for transformation [load_Fact_Transaction]
+2026/10/15 20:02:49 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/15 20:02:49 - Table input.0 - Finished reading query, closing connection
+2026/10/15 20:02:49 - Table input.0 - Finished processing (I=11905, O=0, R=0, W=11905, U=0, E=0)
+2026/10/15 20:02:50 - Table output.0 - Finished processing (I=0, O=11905, R=11905, W=11905, U=0, E=0)
+2026/10/15 20:04:06 - load_Fact_Transaction - Using run configuration [Pentaho local]
+2026/10/15 20:04:06 - load_Fact_Transaction - Dispatching started for transformation [load_Fact_Transaction]
+2026/10/15 20:04:06 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/15 20:04:06 - Table input.0 - Finished reading query, closing connection
+2026/10/15 20:04:06 - Table input.0 - Finished processing (I=11905, O=0, R=0, W=11905, U=0, E=0)
+2026/10/15 20:04:06 - Table output.0 - Finished processing (I=0, O=11905, R=11905, W=11905, U=0, E=0)
+2026/10/15 23:36:26 - load_Fact_Transaction - Using run configuration [Pentaho local]
+2026/10/15 23:36:26 - load_Fact_Transaction - Dispatching started for transformation [load_Fact_Transaction]
+2026/10/15 23:36:26 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/15 23:36:27 - Table input.0 - Finished reading query, closing connection
+2026/10/15 23:36:27 - Table input.0 - Finished processing (I=11905, O=0, R=0, W=11905, U=0, E=0)
+2026/10/15 23:36:27 - Table output.0 - Finished processing (I=0, O=11905, R=11905, W=11905, U=0, E=0)
+2026/10/15 23:39:20 - load_Fact_Transaction - Using run configuration [Pentaho local]
+2026/10/15 23:39:20 - load_Fact_Transaction - Dispatching started for transformation [load_Fact_Transaction]
+2026/10/15 23:39:20 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/15 23:39:20 - Table input.0 - Finished reading query, closing connection
+2026/10/15 23:39:20 - Table input.0 - Finished processing (I=11905, O=0, R=0, W=11905, U=0, E=0)
+2026/10/15 23:39:21 - Table output.0 - Finished processing (I=0, O=11905, R=11905, W=11905, U=0, E=0)
+2026/10/16 00:30:53 - load_Fact_Transaction - Using run configuration [Pentaho local]
+2026/10/16 00:30:53 - load_Fact_Transaction - Dispatching started for transformation [load_Fact_Transaction]
+2026/10/16 00:30:53 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/16 00:30:54 - Table input.0 - Finished reading query, closing connection
+2026/10/16 00:30:54 - Table input.0 - Finished processing (I=11905, O=0, R=0, W=11905, U=0, E=0)
+2026/10/16 00:30:54 - Table output.0 - Finished processing (I=0, O=11905, R=11905, W=11905, U=0, E=0)
+2026/10/16 00:38:14 - load_Fact_Transaction - Using run configuration [Pentaho local]
+2026/10/16 00:38:14 - load_Fact_Transaction - Dispatching started for transformation [load_Fact_Transaction]
+2026/10/16 00:38:14 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/16 00:38:14 - Table input.0 - Finished reading query, closing connection
+2026/10/16 00:38:14 - Table input.0 - Finished processing (I=11905, O=0, R=0, W=11905, U=0, E=0)
+2026/10/16 00:38:15 - Table output.0 - Finished processing (I=0, O=11905, R=11905, W=11905, U=0, E=0)
