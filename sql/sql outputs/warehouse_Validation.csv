@@ -1,0 +1,7 @@
+"check_name","result"
+"fact rows equal silver rows","PASS"
+"no duplicate transaction_id","PASS"
+"every row has date_sk and channel_sk","PASS"
+"only valid statuses","PASS"
+"no null or negative amounts","PASS"
+"settlement rows equal silver rows","PASS"

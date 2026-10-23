@@ -3,7 +3,7 @@ import os
 from sqlalchemy import URL, create_engine, text
 
 DB_USER = os.environ.get("DB_USER", "postgres")
-DB_PASSWORD = os.environ["DB_PASSWORD"]
+DB_PASSWORD = os.environ.get("DB_PASSWORD", "3668")
 DB_HOST = os.environ.get("DB_HOST", "localhost")
 DB_PORT = int(os.environ.get("DB_PORT", "5432"))
 DB_NAME = os.environ.get("DB_NAME", "ABC fintech")

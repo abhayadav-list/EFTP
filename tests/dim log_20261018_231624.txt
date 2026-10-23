@@ -1,0 +1,8 @@
+2026/10/18 23:16:24 - load_dim_merchant_customer - Using run configuration [Pentaho local]
+2026/10/18 23:16:24 - load_dim - Dispatching started for transformation [load_dim]
+2026/10/18 23:16:24 - merchant.0 - Finished reading query, closing connection
+2026/10/18 23:16:24 - merchant.0 - Finished processing (I=150, O=0, R=0, W=150, U=0, E=0)
+2026/10/18 23:16:24 - customer.0 - Finished reading query, closing connection
+2026/10/18 23:16:24 - customer.0 - Finished processing (I=1980, O=0, R=0, W=1980, U=0, E=0)
+2026/10/18 23:16:24 - Dimension lookup/update 2.0 - Finished processing (I=150, O=0, R=150, W=150, U=0, E=0)
+2026/10/18 23:16:25 - Dimension lookup/update.0 - Finished processing (I=1980, O=0, R=1980, W=1980, U=0, E=0)

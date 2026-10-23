@@ -355,7 +355,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>48</xloc>
+      <xloc>32</xloc>
       <yloc>64</yloc>
       <attributes_kjc/>
     </entry>
@@ -394,7 +394,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>144</xloc>
+      <xloc>160</xloc>
       <yloc>64</yloc>
       <attributes_kjc/>
     </entry>
@@ -419,7 +419,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>272</xloc>
+      <xloc>336</xloc>
       <yloc>64</yloc>
       <attributes_kjc/>
     </entry>
@@ -458,7 +458,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>448</xloc>
+      <xloc>544</xloc>
       <yloc>64</yloc>
       <attributes_kjc/>
     </entry>
@@ -497,7 +497,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>640</xloc>
+      <xloc>752</xloc>
       <yloc>64</yloc>
       <attributes_kjc/>
     </entry>
@@ -572,7 +572,7 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>672</xloc>
+      <xloc>688</xloc>
       <yloc>272</yloc>
       <attributes_kjc/>
     </entry>
@@ -607,12 +607,12 @@
       <type>WRITE_TO_LOG</type>
       <attributes/>
       <logmessage>"PIPELINE COMPLETED SUCCESSFULLY"</logmessage>
-      <loglevel/>
+      <loglevel>Basic</loglevel>
       <logsubject/>
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>336</xloc>
+      <xloc>272</xloc>
       <yloc>272</yloc>
       <attributes_kjc/>
     </entry>

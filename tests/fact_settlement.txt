@@ -46,3 +46,39 @@
 2026/10/16 00:38:15 - Table input.0 - Finished reading query, closing connection
 2026/10/16 00:38:15 - Table input.0 - Finished processing (I=3864, O=0, R=0, W=3864, U=0, E=0)
 2026/10/16 00:38:15 - Table output.0 - Finished processing (I=0, O=3864, R=3864, W=3864, U=0, E=0)
+2026/10/16 03:02:54 - fact_settlement - Using run configuration [Pentaho local]
+2026/10/16 03:02:54 - load_fact_settlement - Dispatching started for transformation [load_fact_settlement]
+2026/10/16 03:02:55 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/16 03:02:55 - Table input.0 - Finished reading query, closing connection
+2026/10/16 03:02:55 - Table input.0 - Finished processing (I=3864, O=0, R=0, W=3864, U=0, E=0)
+2026/10/16 03:02:55 - Table output.0 - Finished processing (I=0, O=3864, R=3864, W=3864, U=0, E=0)
+2026/10/16 03:05:53 - fact_settlement - Using run configuration [Pentaho local]
+2026/10/16 03:05:53 - load_fact_settlement - Dispatching started for transformation [load_fact_settlement]
+2026/10/16 03:05:53 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/16 03:05:53 - Table input.0 - Finished reading query, closing connection
+2026/10/16 03:05:53 - Table input.0 - Finished processing (I=3864, O=0, R=0, W=3864, U=0, E=0)
+2026/10/16 03:05:53 - Table output.0 - Finished processing (I=0, O=3864, R=3864, W=3864, U=0, E=0)
+2026/10/16 03:07:46 - fact_settlement - Using run configuration [Pentaho local]
+2026/10/16 03:07:46 - load_fact_settlement - Dispatching started for transformation [load_fact_settlement]
+2026/10/16 03:07:46 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/16 03:07:46 - Table input.0 - Finished reading query, closing connection
+2026/10/16 03:07:46 - Table input.0 - Finished processing (I=3864, O=0, R=0, W=3864, U=0, E=0)
+2026/10/16 03:07:46 - Table output.0 - Finished processing (I=0, O=3864, R=3864, W=3864, U=0, E=0)
+2026/10/16 03:10:53 - fact_settlement - Using run configuration [Pentaho local]
+2026/10/16 03:10:53 - load_fact_settlement - Dispatching started for transformation [load_fact_settlement]
+2026/10/16 03:10:53 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/16 03:10:53 - Table input.0 - Finished reading query, closing connection
+2026/10/16 03:10:53 - Table input.0 - Finished processing (I=3864, O=0, R=0, W=3864, U=0, E=0)
+2026/10/16 03:10:53 - Table output.0 - Finished processing (I=0, O=3864, R=3864, W=3864, U=0, E=0)
+2026/10/18 23:16:27 - fact_settlement - Using run configuration [Pentaho local]
+2026/10/18 23:16:27 - load_fact_settlement - Dispatching started for transformation [load_fact_settlement]
+2026/10/18 23:16:27 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/18 23:16:27 - Table input.0 - Finished reading query, closing connection
+2026/10/18 23:16:27 - Table input.0 - Finished processing (I=3864, O=0, R=0, W=3864, U=0, E=0)
+2026/10/18 23:16:27 - Table output.0 - Finished processing (I=0, O=3864, R=3864, W=3864, U=0, E=0)
+2026/10/23 10:42:43 - fact_settlement - Using run configuration [Pentaho local]
+2026/10/23 10:42:43 - load_fact_settlement - Dispatching started for transformation [load_fact_settlement]
+2026/10/23 10:42:43 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/23 10:42:43 - Table input.0 - Finished reading query, closing connection
+2026/10/23 10:42:43 - Table input.0 - Finished processing (I=3864, O=0, R=0, W=3864, U=0, E=0)
+2026/10/23 10:42:43 - Table output.0 - Finished processing (I=0, O=3864, R=3864, W=3864, U=0, E=0)

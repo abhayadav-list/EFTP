@@ -1,0 +1,7 @@
+"tbl","row_count"
+"dim_customer",1981
+"dim_merchant",151
+"dim_date",365
+"dim_channel",3
+"fact_transactions",11905
+"fact_settlement",3864
