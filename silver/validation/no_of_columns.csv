@@ -1,0 +1,12 @@
+"table_name","column_count"
+"api_gateway_logs",11
+"crm_customers",14
+"digital_wallet_transactions",13
+"fraud_detection_flags",9
+"kyc_verification",8
+"merchant_portal",12
+"mobile_banking_sessions",11
+"payment_gateway_transactions",11
+"settlement_batches",10
+"stream_events",4
+"upi_transactions",12

@@ -414,7 +414,7 @@
       <add_date>N</add_date>
       <add_time>N</add_time>
       <insertScript>Y</insertScript>
-      <script>python "D:\EFTP\python\cleanse_transactions.py"</script>
+      <script>py "D:\EFTP\python\cleanse_transactions.py"</script>
       <loglevel>Basic</loglevel>
       <parallel>N</parallel>
       <draw>Y</draw>

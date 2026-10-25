@@ -82,3 +82,9 @@
 2026/10/23 10:42:41 - Table input.0 - Finished reading query, closing connection
 2026/10/23 10:42:41 - Table input.0 - Finished processing (I=11905, O=0, R=0, W=11905, U=0, E=0)
 2026/10/23 10:42:42 - Table output.0 - Finished processing (I=0, O=11905, R=11905, W=11905, U=0, E=0)
+2026/10/23 11:18:07 - load_Fact_Transaction - Using run configuration [Pentaho local]
+2026/10/23 11:18:07 - load_Fact_Transaction - Dispatching started for transformation [load_Fact_Transaction]
+2026/10/23 11:18:07 - Table output.0 - Connected to database [postgres] (commit=1000)
+2026/10/23 11:18:08 - Table input.0 - Finished reading query, closing connection
+2026/10/23 11:18:08 - Table input.0 - Finished processing (I=11905, O=0, R=0, W=11905, U=0, E=0)
+2026/10/23 11:18:09 - Table output.0 - Finished processing (I=0, O=11905, R=11905, W=11905, U=0, E=0)

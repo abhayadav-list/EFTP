@@ -1,0 +1,11 @@
+"tbl","row_count"
+"api_gateway_logs",5200
+"crm_customers",1980
+"digital_wallet_transactions",2954
+"fraud_detection_flags",19400
+"kyc_verification",2000
+"merchant_portal",150
+"mobile_banking_sessions",6000
+"payment_gateway_transactions",2406
+"settlement_batches",3864
+"upi_transactions",6760
